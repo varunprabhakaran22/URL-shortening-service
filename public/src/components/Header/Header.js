@@ -4,7 +4,6 @@ import '../Header/Header.css'
 
 class Header extends Component {
     render() {
-        console.log("header");
         return (
             <div>
                 <nav>
