@@ -18,15 +18,13 @@ class HomePage extends Component {
         })
     }
 
-    handleSubmit = async() => {
-        console.log(this.state.longUrl);
+    handleSubmit = () => {
+        let url = {}
+        url.longUrl = this.state.longUrl
         console.log("executing");
-        // const {source, destination ,stopovers} = this.state
-        // const data = this.state
-        // console.log(source + "" +destination +  "" + stopovers);
-        // await axios.post("http://localhost:8000/api/shareride/userdetails",data)
-        // .then(() =>console.log("axios"))
-        // .catch((err) => console.log(err))
+        axios.post("http://localhost:8000/api/url/shortening",url)
+        .then(() =>console.log("axios"))
+        .catch((err) => console.log(err))
         // this.props.history.push("/")
     }
 
