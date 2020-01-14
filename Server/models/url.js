@@ -1,22 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const urlSchema  = new mongoose.Schema({
-    urlCode :{
-        type:String
-    },
+const urlSchema = new mongoose.Schema({
+  urlCode: String,
+  longUrl: String,
+  shortUrl: String,
+  date: { type: String, default: Date.now }
+});
 
-    shortUrl :{
-        type:String
-    },
-
-    longUrl :{
-        type:String
-    },
-
-    date:{
-        default:Date.now,
-        type:String
-    }
-})
-
-module.exports = mongoose.model("url",urlSchema)
+module.exports = mongoose.model('Url', urlSchema);
