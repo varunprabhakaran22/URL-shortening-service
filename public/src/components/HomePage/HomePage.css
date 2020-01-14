@@ -19,3 +19,8 @@ form .frmBtn{cursor: pointer;
     border-radius: 25px; 
     margin: 0 10%;
 }
+
+.loading{
+    margin: 25% ;
+    text-align: center;
+}
