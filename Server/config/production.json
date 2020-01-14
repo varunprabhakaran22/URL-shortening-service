@@ -1,4 +1,4 @@
 {
     "mongoURL" : "mongodb+srv://varun:testpassword@cluster0-bhfp5.mongodb.net/test?retryWrites=true&w=majority",
-    "baseUrl" : "http://localhost:8000"
+    "baseUrl" : "http://localhost:5000"
 }
