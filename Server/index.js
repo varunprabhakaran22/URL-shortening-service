@@ -1,28 +1,23 @@
-// importing all the required packages
+  
 const express = require('express');
-const bodyparser = require('body-parser')
-const mongoose = require('mongoose');
+const connectDB = require('./config/db');
 const cors=require('cors');
-const connectDB = require('../Server/config/db')
 
-const port = process.env.PORT || 8000;
+
 const app = express();
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({encoded:false}))
+
+
 app.use(cors());
 
-//@ connecting to db
-connectDB()
+// Connect to database
+connectDB();
 
+app.use(express.json());
 
+// Define Routes
+app.use('/', require('./routes/index'));
+app.use('/api/url', require('./routes/url')); 
 
-//importing the files
-const urlShortenning = require('../Server/routes/urlShortening')
+const PORT = 5000;
 
-//Redirecting to routes
-app.use('/api/url', urlShortenning)
-
-// Server can be accessed from port 8000
-app.listen(port, () => {
-    console.log('Server is ready');
-})
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
