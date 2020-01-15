@@ -26,7 +26,8 @@ class Login extends Component {
         userDetails.password = this.state.password
         console.log("login");
         console.log(userDetails);
-        axios.post("http://localhost:5000/api/auth/login",userDetails)
+        // axios.post("http://localhost:5000/api/auth/login",userDetails)
+        axios.post("https://urlshorterserv.herokuapp.com/api/auth/login",userDetails)
         .then((res,req) =>{
             console.log(res);
             if(res.status === 200){

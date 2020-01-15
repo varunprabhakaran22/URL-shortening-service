@@ -31,7 +31,8 @@ class HomePage extends Component {
         let url = {}
         url.longUrl = this.state.longUrl
         url.token = sessionStorage.getItem("token");
-        axios.post("http://localhost:5000/api/url/shorten",url)
+        // axios.post("http://localhost:5000/api/url/shorten",url)
+        axios.post("https://urlshorterserv.herokuapp.com/api/url/shorten",url)
         .then((res,req) =>{
             this.setState({
                 shortUrl : res.data.shortUrl,
