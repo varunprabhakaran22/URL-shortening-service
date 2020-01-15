@@ -87,7 +87,7 @@ class HomePage extends Component {
                         <div>
                             <label className="shorturl"> Short Url </label>
                             <input type="text" 
-                                className="frmField" 
+                                className="shorturlfield" 
                                 name = "shortUrl"  
                                 value = {this.state.shortUrl}
                                 readOnly={this.state.shortUrl}
