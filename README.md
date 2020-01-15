@@ -13,14 +13,14 @@ The main objective of the application is to help the user to shorten any url
 ## Description
 
 Step1: User should creathe the account.<br/>
-Step2: Once after creating the account user can sign In with their credentials.
-step3: After Successfull login it will redirect to Homepage where user can paste their url
-Step4: As a result shorten (short url ) will be created.
+Step2: Once after creating the account user can sign In with their credentials.<br/>
+step3: After Successfull login it will redirect to Homepage where user can paste their url <br/>
+Step4: As a result shorten (short url ) will be created.<br/>
 
 
 ## To run this project locally
-Clone the project using Git Bash / Command prompt:
-git clone : https://github.com/varunprabhakaran22/URL-shortening-service/
+Clone the project using Git Bash / Command prompt: <br/>
+git clone : https://github.com/varunprabhakaran22/URL-shortening-service/ <br/>
 
 ### Navigate inside the directory
 cd public
