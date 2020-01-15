@@ -12,7 +12,10 @@ and also JWT is used for authentication and authorization
 The main objective of the application is to help the user to shorten any url
 
 ## Description
-
+ <p>The URL Shortener is a service that takes long URLs and squeezes them into fewer characters  <br/>
+  to make a link that is easier to share, tweet, or email to friends. ... <br/>
+  Links that users create through the URL Shortener can also open directly in your mobile applications that can handle those links.<br/>
+  
 Step1: User should create the account.<br/>
 Step2: Once after creating the account user can sign In with their credentials.<br/>
 step3: After Successfull login it will redirect to Homepage where user can paste their url <br/>
