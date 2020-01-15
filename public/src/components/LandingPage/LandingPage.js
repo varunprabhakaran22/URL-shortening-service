@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import {withRouter , Redirect} from "react-router-dom";
-import CreateUser from '../CreateUser/CreateUser'
-import Login from '../Login/Login'
-import axios from 'axios'
+import { withRouter} from "react-router-dom";
 import '../LandingPage/LandingPage.css'
 
 class LandingPage extends Component {
@@ -10,10 +7,12 @@ class LandingPage extends Component {
         super()
     }
 
+    //redirecting
     loginPage = ()=>{
         this.props.history.push("/loginPage")
     }
 
+    //redirecting
     userCreation = ()=>{
         this.props.history.push("/createUser")
     }

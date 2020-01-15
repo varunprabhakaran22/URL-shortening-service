@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//Mongoose model for url 
 const urlSchema = new mongoose.Schema({
   urlCode: String,
   longUrl: String,

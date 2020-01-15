@@ -28,9 +28,10 @@ router.post('/shorten', checkAuth,  async (req, res) => {
 
       if (url) {
         res.json(url);
-      } else {
+      } 
+      
+      else {
         const shortUrl = baseUrl + '/' + urlCode;
-
         url = new Url({
           longUrl,
           shortUrl,
@@ -42,13 +43,16 @@ router.post('/shorten', checkAuth,  async (req, res) => {
 
         res.json(url);
       }
-    } catch (err) {
+    }catch (err) {
       console.error(err);
       res.status(500).json('Server error');
     }
-  } else {
+  } 
+  
+  else {
     res.status(401).json('Invalid long url');
   }
+  
 });
 
 module.exports = router;

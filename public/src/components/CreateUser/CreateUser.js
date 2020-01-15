@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {withRouter , Redirect} from "react-router-dom";
-import Header from '../Header/Header'
 import axios from 'axios'
 import '../CreateUser/CreateUser.css'
 
@@ -14,6 +13,7 @@ class CreateUser extends Component {
         }
     }
 
+    // changing the state
     handleChange = (event) => {
         const {name, value} = event.target
         this.setState({
@@ -21,15 +21,13 @@ class CreateUser extends Component {
         })
     }
 
+    // axois call to send the user details to the server
     createUser = ()=>{
         let userDetails = {}
         userDetails.email = this.state.email
         userDetails.password = this.state.password
-        console.log("create user ");
-        console.log(userDetails);
         axios.post("http://localhost:5000/api/auth/createuser",userDetails)
         .then((res,req) =>{
-            console.log(res);
             if(res.status ==201){
                 this.props.history.push("/loginPage")
             }
@@ -56,7 +54,6 @@ class CreateUser extends Component {
                         <div>   
                             <div className= "form_right">
                                 <h1> Create User</h1>
-
                                 <div className="input_container">
                                     <input type="text" 
                                         className={this.state.isMailExist ? "frmFieldError" : "frmField"} 
@@ -78,7 +75,6 @@ class CreateUser extends Component {
                                         onChange = {event => this.handleChange(event)}
                                     />
                                 </div>
-
                                 <button type="button" className = "frmBtn"  onClick = {this.createUser}> Create User </button>
                             </div>
                         </div>

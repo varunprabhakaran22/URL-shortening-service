@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
+//Middleware to check authorization for the routes
 module.exports = (req, res, next) => {
     try {
         const { token } = req.body

@@ -15,6 +15,7 @@ class HomePage extends Component {
         }
     }
 
+    //method to change the states
     handleChange = (event) => {
         const {name, value} = event.target
         this.setState({
@@ -22,6 +23,7 @@ class HomePage extends Component {
         })
     }
 
+    //method to send the long url to server
     handleSubmit = () => {
         this.setState({
             isLoading:!this.state.isLoading
@@ -29,10 +31,8 @@ class HomePage extends Component {
         let url = {}
         url.longUrl = this.state.longUrl
         url.token = sessionStorage.getItem("token");
-        console.log("executing");
         axios.post("http://localhost:5000/api/url/shorten",url)
         .then((res,req) =>{
-            console.log(res.data.shortUrl);
             this.setState({
                 shortUrl : res.data.shortUrl,
                 isLoading:!this.state.isLoading
@@ -44,14 +44,13 @@ class HomePage extends Component {
                 isLogin:false,
                 isLoading:!this.state.isLoading
             })
-            console.log("loginn first");
         })
     }
 
     render() {
         return (
             <div>
-                {this.state.isLogin?
+                { this.state.isLogin?
                     (
                         < Header/>
                     )
@@ -60,6 +59,7 @@ class HomePage extends Component {
                         <LandingPage />
                     )
                 }
+
                 { this.state.isLoading ?
                     (
                         <h1 className = "loading">....Loading </h1>
