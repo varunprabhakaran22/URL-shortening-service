@@ -8,7 +8,7 @@ class Header extends Component {
             <div>
                 <nav>
                     <ul>
-                        <li><Link to="/" className="link-style" > Home </Link></li>
+                        <li><Link to="/homepage" className="link-style" > Home </Link></li>
                         <li><Link to="/about" className="link-style" > About </Link></li>
                         <li><Link to="/contact" className="link-style" > Contact </Link></li>
                     </ul>
