@@ -9,6 +9,28 @@ form .frmField{
     outline: none; 
     margin: 5% 10%;
 }
+
+.frmField{ 
+    display: block;
+    width: 50%; 
+    padding: 10px 20px;
+    color: #707D80; 
+    font-size: 24px;    
+    border: none;  
+    background: #EDEDED; 
+    outline: none; 
+    margin: 0 10%;
+}
+
+
+.shorturl{
+    display: block;
+    width: 50%;
+    color: #707D80;
+    font-size: 24px;
+    border: none;
+    margin: 10% 10% 1% 10%
+}
   
 form .frmBtn{cursor: pointer;
     padding: 12px 40px; 
