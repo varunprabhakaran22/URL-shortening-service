@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter} from "react-router-dom";
-import Header from '../Header/Header'
 import axios from 'axios'
-import CreateUser from '../CreateUser/CreateUser'
 import '../Login/Login.css'
 
 class Login extends Component {
@@ -31,7 +29,7 @@ class Login extends Component {
         axios.post("http://localhost:5000/api/auth/login",userDetails)
         .then((res,req) =>{
             console.log(res);
-            if(res.status == 200){
+            if(res.status === 200){
                 let token = res.data.token
                 sessionStorage.setItem("token", token);
                 this.props.history.push("/homepage")

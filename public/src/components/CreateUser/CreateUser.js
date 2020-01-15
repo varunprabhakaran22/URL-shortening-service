@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {withRouter , Redirect} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import axios from 'axios'
 import '../CreateUser/CreateUser.css'
 
@@ -28,7 +28,7 @@ class CreateUser extends Component {
         userDetails.password = this.state.password
         axios.post("http://localhost:5000/api/auth/createuser",userDetails)
         .then((res,req) =>{
-            if(res.status ==201){
+            if(res.status ===201){
                 this.props.history.push("/loginPage")
             }
         })

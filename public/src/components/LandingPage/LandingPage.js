@@ -3,10 +3,7 @@ import { withRouter} from "react-router-dom";
 import '../LandingPage/LandingPage.css'
 
 class LandingPage extends Component {
-    constructor(){
-        super()
-    }
-
+    
     //redirecting
     loginPage = ()=>{
         this.props.history.push("/loginPage")
