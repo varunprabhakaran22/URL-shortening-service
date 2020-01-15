@@ -12,7 +12,7 @@ The main objective of the application is to help the user to shorten any url
 
 ## Description
 
-Step1: User should creathe the account.
+Step1: User should creathe the account.<br/>
 Step2: Once after creating the account user can sign In with their credentials.
 step3: After Successfull login it will redirect to Homepage where user can paste their url
 Step4: As a result shorten (short url ) will be created.
