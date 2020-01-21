@@ -2,11 +2,10 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cors=require('cors');
-const path = require('path');
-
 
 const app = express();
 
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -23,6 +22,6 @@ app.use('/api/url', require('./routes/url'));
 
 
 
-const port = process.env.PORT || 5000;
-  
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => {
+  console.log('Server is ready');
+});

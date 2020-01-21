@@ -27,7 +27,7 @@ class CreateUser extends Component {
         userDetails.email = this.state.email
         userDetails.password = this.state.password
         // axios.post("http://localhost:5000/api/auth/createuser",userDetails)
-        axios.post("http://url-shorten-ap.herokuapp.com/api/auth/createuser",userDetails)
+        axios.post("https://url-shorten-ap.herokuapp.com/api/auth/createuser",userDetails)
         .then((res,req) =>{
             if(res.status ===201){
                 this.props.history.push("/loginPage")
