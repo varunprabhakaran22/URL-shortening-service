@@ -24,8 +24,6 @@ class Login extends Component {
         let userDetails = {}
         userDetails.email = this.state.email
         userDetails.password = this.state.password
-        console.log("login");
-        console.log(userDetails);
         // axios.post("http://localhost:5000/api/auth/login",userDetails)
         axios.post("https://url-shorten-aps.herokuapp.com/api/auth/login",userDetails)
         .then((res,req) =>{
