@@ -1,5 +1,5 @@
 {
     "mongoURL" : "mongodb+srv://varun:testpassword@cluster0-bhfp5.mongodb.net/test?retryWrites=true&w=majority",
-    "baseUrl" : "https://url-shorten-aps.herokuapp.com/",
+    "baseUrl" : "https://url-shorten-aps.herokuapp.com",
     "JWT_KEY" : "MyKEY"
 }
