@@ -27,7 +27,7 @@ class Login extends Component {
         console.log("login");
         console.log(userDetails);
         // axios.post("http://localhost:5000/api/auth/login",userDetails)
-        axios.post("https://url-shorten-ap.herokuapp.com/api/auth/login",userDetails)
+        axios.post("https://url-shorten-aps.herokuapp.com/api/auth/login",userDetails)
         .then((res,req) =>{
             console.log(res);
             if(res.status === 200){
