@@ -37,7 +37,7 @@ class Login extends Component {
         .catch((err) => {
             console.log(err)
             this.setState({
-                isValid:!this.state.isValid
+                isValid:false
             }) 
         })  
     }
