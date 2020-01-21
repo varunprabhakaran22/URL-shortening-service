@@ -1,5 +1,5 @@
 {
     "mongoURL" : "mongodb+srv://varun:testpassword@cluster0-bhfp5.mongodb.net/test?retryWrites=true&w=majority",
-    "baseUrl" : "https://urlshorterserv.herokuapp.com/",
+    "baseUrl" : "http://localhost:5000",
     "JWT_KEY" : "MyKEY"
 }
