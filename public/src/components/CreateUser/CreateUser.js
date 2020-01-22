@@ -10,6 +10,7 @@ class CreateUser extends Component {
             isMailExist:false,
             email:"",
             password:"",
+            isLoading:false
         }
     }
 
@@ -17,12 +18,20 @@ class CreateUser extends Component {
     handleChange = (event) => {
         const {name, value} = event.target
         this.setState({
-            [name]: value
+            [name]: value,
+            isMailExist:false
+        })
+    }
+
+    setLoading = ()=>{
+        this.setState({
+            isLoading:!this.state.isLoading
         })
     }
 
     // axois call to send the user details to the server
     createUser = ()=>{
+        this.setLoading();
         let userDetails = {}
         userDetails.email = this.state.email
         userDetails.password = this.state.password
@@ -30,10 +39,12 @@ class CreateUser extends Component {
         axios.post("https://url-shorten-aps.herokuapp.com/api/auth/createuser",userDetails)
         .then((res,req) =>{
             if(res.status ===201){
+                this.setLoading();
                 this.props.history.push("/loginPage")
             }
         })
         .catch((err) => {
+            this.setLoading();
             console.log(err)
             this.setState({
                 isMailExist:true
@@ -69,6 +80,14 @@ class CreateUser extends Component {
                                 <div>
                                     {this.state.isMailExist ? 
                                         (<h3 className ="emailExits"> User id already Exists </h3>)
+                                        :
+                                        (null)
+                                    }
+                                </div>
+
+                                <div>
+                                    {this.state.isLoading ? 
+                                        (<h3 className ="emailExits"> ...Loading </h3>)
                                         :
                                         (null)
                                     }
