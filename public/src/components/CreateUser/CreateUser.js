@@ -36,7 +36,7 @@ class CreateUser extends Component {
         .catch((err) => {
             console.log(err)
             this.setState({
-                isMailExist:!this.state.isMailExist
+                isMailExist:true
             })
         })
     }
@@ -47,7 +47,7 @@ class CreateUser extends Component {
                 <div className="container flex">
                     <div className="flex1 ">
                         <div className="appName alignCenter">
-                            <h1>Url Shortening <span> </span> </h1> 
+                            <h1> Url Shortening <span> </span> </h1> 
                         </div>
                     </div>
 
@@ -57,13 +57,21 @@ class CreateUser extends Component {
                                 <h1> Create User</h1>
                                 <div className="input_container">
                                     <input type="text" 
-                                        className={this.state.isMailExist ? "frmFieldError" : "frmField"} 
+                                        className={ this.state.isMailExist ? "frmFieldError" : "frmField"} 
                                         placeholder="Email" 
                                         autoComplete = "off"
                                         name = "email"  
                                         value={this.state.email} 
                                         onChange = {event => this.handleChange(event)}
                                     />
+                                </div>
+
+                                <div>
+                                    {this.state.isMailExist ? 
+                                        (<h3 className ="emailExits"> User id already Exists </h3>)
+                                        :
+                                        (null)
+                                    }
                                 </div>
 
                                 <div className="input_container">

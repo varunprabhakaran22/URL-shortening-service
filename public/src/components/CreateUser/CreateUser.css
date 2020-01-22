@@ -178,6 +178,9 @@ i {
     margin: 2% 0;
 }
 
+.emailExits{
+    text-align: center;
+}
 
 .frmFieldError{
     display: block;
