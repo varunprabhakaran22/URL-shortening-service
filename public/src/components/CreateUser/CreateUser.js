@@ -85,14 +85,6 @@ class CreateUser extends Component {
                                     }
                                 </div>
 
-                                <div>
-                                    {this.state.isLoading ? 
-                                        (<h3 className ="emailExits"> ...Loading </h3>)
-                                        :
-                                        (null)
-                                    }
-                                </div>
-
                                 <div className="input_container">
                                     <input type="password" 
                                         className="frmField" 
@@ -104,6 +96,15 @@ class CreateUser extends Component {
                                     />
                                 </div>
                                 <button type="button" className = "frmBtn"  onClick = {this.createUser}> Create User </button>
+
+                                <div>
+                                    {this.state.isLoading ? 
+                                        (<h3 className ="emailExits"> ...Loading </h3>)
+                                        :
+                                        (null)
+                                    }
+                                </div>
+
                             </div>
                         </div>
                     </div>

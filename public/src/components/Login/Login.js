@@ -10,6 +10,7 @@ class Login extends Component {
             isValid:true,
             email:"",
             password:"",
+            isLoading:false
         }
     }
 
@@ -20,21 +21,29 @@ class Login extends Component {
         })
     }
 
+    setLoading = ()=>{
+        this.setState({
+            isLoading:!this.state.isLoading
+        })
+    }
+
     handleSubmit = () => {
+        this.setLoading();
         let userDetails = {}
         userDetails.email = this.state.email
         userDetails.password = this.state.password
         // axios.post("http://localhost:5000/api/auth/login",userDetails)
         axios.post("https://url-shorten-aps.herokuapp.com/api/auth/login",userDetails)
         .then((res,req) =>{
-            console.log(res);
-            if(res.status === 200){
+            if(res.status === 200){    
+                this.setLoading();
                 let token = res.data.token
                 sessionStorage.setItem("token", token);
                 this.props.history.push("/homepage")
             }
         })
         .catch((err) => {
+            this.setLoading();
             console.log(err)
             this.setState({
                 isValid:false
@@ -77,6 +86,14 @@ class Login extends Component {
                                     />
                                 </div>
                                 <button type="button" className = "frmBtn"  onClick = {this.handleSubmit}> Login </button>
+
+                                <div>
+                                    {this.state.isLoading ? 
+                                        (<h3 className ="emailExits"> ...Loading </h3>)
+                                        :
+                                        (null)
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
